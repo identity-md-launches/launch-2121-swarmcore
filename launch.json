@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "SwarmCore",
+    "name": "SwarmCore",
+    "symbol": "SWARMCORE",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0x0f44a55663e888bb63618a0c31b68cbc6c01aa71"
+  },
+  "notes": "SwarmCore (src/SwarmCore.sol) is a fixed-supply ERC-20 built on OpenZeppelin Contracts v5.4.0 ERC20, unchanged. Its constructor takes no arguments: it mints the whole supply of 1,000,000,000 SWARMCORE (1000000000000000000000000000 minor units, 18 decimals) once to msg.sender, which at launch is the ProjectFactory, records that address in the immutable DEPLOYER and emits SupplyMinted. There is no owner, minter, pause, blacklist, freeze, seize, burnFrom, upgrade or initializer, so the supply can never grow and nobody but a holder (or an approved spender) can move a holder's balance. Every transfer, from any address, moves exactly the amount requested: no fee, tax, reflection, burn-on-transfer, cooldown or wallet cap, so the token needs no exemption for the factory, the PoolManager or the launch's MerkleDistributor and the launch flows (swarm share to the distributor, 80% seed into the Uniswap v4 pool against IMD, remainder to economics.remainderTo) all arrive whole. The contract makes no external calls, rejects plain ether and its runtime contains no DELEGATECALL, CALLCODE or SELFDESTRUCT. There are no application contracts and no initialization calls."
+}
